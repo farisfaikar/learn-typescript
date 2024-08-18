@@ -119,6 +119,34 @@ const usernames = new StorageContainer<string>();
 usernames.setItem("What you want");
 console.log(usernames.getItem(0));
 
+const arr = [1, 2, 3, 4, 2, 3, 21, 4];
+
+const checkEven = (a: number): boolean => a % 2 === 0;
+
+const arr2 = arr.filter(checkEven);
+
+console.log("Filter result:");
+console.log(arr2);
+
+const timesTwo = (a: number): number => a * 2;
+
+const arr3 = arr2.map(timesTwo);
+
+console.log("Map result:");
+console.log(arr3);
+
+const calculateTotal = (a: number, b: number, index: number, totalArr: number[]): number => {
+    console.log("Result: " + (a + b));
+    console.log("Index: " + index);
+    console.log("TotalArr: " + totalArr);
+    return a + b;
+};
+
+console.log("Reduce result:");
+const arr4 = arr3.reduce(calculateTotal);
+
+console.log(arr4);
+
 const ids = new StorageContainer<number>();
 ids.setItem([
     1, 2, 3, 4

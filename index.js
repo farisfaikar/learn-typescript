@@ -80,6 +80,24 @@ printStatus(Status.ENABLED);
 const usernames = new StorageContainer();
 usernames.setItem("What you want");
 console.log(usernames.getItem(0));
+const arr = [1, 2, 3, 4, 2, 3, 21, 4];
+const checkEven = (a) => a % 2 === 0;
+const arr2 = arr.filter(checkEven);
+console.log("Filter result:");
+console.log(arr2);
+const timesTwo = (a) => a * 2;
+const arr3 = arr2.map(timesTwo);
+console.log("Map result:");
+console.log(arr3);
+const calculateTotal = (a, b, index, totalArr) => {
+    console.log("Result: " + (a + b));
+    console.log("Index: " + index);
+    console.log("TotalArr: " + totalArr);
+    return a + b;
+};
+console.log("Reduce result:");
+const arr4 = arr3.reduce(calculateTotal);
+console.log(arr4);
 const ids = new StorageContainer();
 ids.setItem([
     1, 2, 3, 4
